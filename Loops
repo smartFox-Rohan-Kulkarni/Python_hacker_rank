@@ -1,0 +1,4 @@
+if __name__ == '__main__':
+    n = int(input())
+    for ele in range(n):
+        print(ele**2)
