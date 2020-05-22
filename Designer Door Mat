@@ -1,0 +1,51 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+def design(n,m):
+    rows = m
+
+    print("-" * int((rows-2)/2), end=".|.")
+    print("-" * int((rows-2)/2), end="\n")
+
+    i = (rows // 2) - 1
+    ri=i
+    j = 2
+    rj=j
+    z=3
+    while i != 0:
+        while (i-z)!=0:
+        
+            print("-" * (i-z), end="")
+            print(".|." * (j+1), end="")
+            print("-" * (i-z), end="\n")
+            i = i - 1
+            j = j + 2
+            z+=2
+        if j > (i//2) and i != 0:
+            i = i + 1
+            j = j - 2
+            break
+    mids=(rows-7)//2
+    print("-" * int(mids), end="")
+    print("WELCOME",end="")
+    print("-" * int(mids), end="\n")
+    z-=2
+    while ri != 0:
+        while not j <= 0:
+            print("-" * (i-z), end="")
+            print(".|." * (j+1), end="")
+            print("-" * (i-z), end="\n")
+            i = i + 1
+            j = j - 2
+            ri = ri - 1
+            z-=2
+        if j <= 0 and i != ri:
+            break
+
+    print("-" * int((rows - 2) / 2), end=".|.")
+    print("-" * int((rows - 2) / 2), end="\n")
+
+
+if __name__=='__main__':
+    token=input().split()
+    n=int(token[0])
+    m=int(token[1])
+    design(n,m)
